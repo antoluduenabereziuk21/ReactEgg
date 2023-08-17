@@ -1,23 +1,67 @@
-/*
-precionando rafc (react functional component)nos auto generara el componente con el nombre del file
- */
-import React from "react";
+
+import React, { useState, useSyncExternalStore } from "react";
 
 export const Footer = () => {
-  //esto nos retornara un elemento jsx
+  /** crearemos Nuestro primer Hook
+   * para ello escribirmos useState , y luego ctrl+espacio
+   *  selecionamos useStateSnippet
+   * 
+   * const [clicks, setClicks] = useState(0);
+   * 
+   * este hook esta conformado por 2 partes
+   * 
+   * cons[una variable, una funcion que afecta al primero]
+   * El segundo valor es el Hook ue queremos usar en este 
+   * caso es numerico, o podria pasarse una funcion 
+   * = useState();
+   * 
+  */
+
+   const [clicks, setClicks] = useState(0);
+
+  /*utilzaremos estas dos variables pra el el jsx sean 
+  usadas y mediante binding lo injectamos dentro del jsx
+  <p className="col-md-4 mb-0 text-body-secondary">
+          &copy; {year} {companyName}
+        </p>
+   */
+
+   const year = new Date().getFullYear();
+   const companyName = "Mi primerReactProyect";
+  /**
+   * Llamaremos a un evento click para que la imagen del
+   * perrito nos informe cuando se haga click.
+   * Mediante el evento de React onClick llamaremos anuestra
+   * funcion handleClick mediante Binding en el jsx
+   * y dentro de nuestro span incorparemos 
+   * la varible "clicks" de nuestro Hook
+   */
+  const handleClick=()=>{
+    /**
+     * por ultimo nuestro handle click sera quien
+     * implemtara la funcion setClicks he incrementara su 
+     * valor
+     */
+    setClicks(clicks + 1);
+  }
+
+
+
+
   return (
     <div className="container">
       <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        
         <p className="col-md-4 mb-0 text-body-secondary">
-          &copy; 2023 Company, Inc
+          &copy; {year} {companyName} Clicks={clicks}
         </p>
 
-        <a
-          href="/"
+        <span
+          onClick={handleClick}
           className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
         >
           <img className="App-logo" height="52" src="dog.png" alt="" />
-        </a>
+        </span>
 
         <ul className="nav col-md-4 justify-content-end">
           <li className="nav-item">
