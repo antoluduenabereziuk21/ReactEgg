@@ -9,7 +9,9 @@ export const NavBar = () => {
             <a
               href="/"
               className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-            ></a>
+            >
+              <img className="App-logo" height="52" src="dog.png" alt="" />
+            </a>
 
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li>
