@@ -1,7 +1,12 @@
 import React from 'react'
-import Card from './Card'
-
-const Cards = () => {
+import  {Card} from './Card'
+/**
+ * 
+ * podemos mediante props ver los que nos llega
+ * console.log(props);
+ */
+ export const Cards = (props) => {
+  //console.log(props);
   return (
     <div className="album py-5 bg-body-tertiary">
           <div className="container">
@@ -20,4 +25,4 @@ const Cards = () => {
   )
 }
 
-export default Cards
+//export default Cards

@@ -9,7 +9,7 @@ export const API_RM={
     CHARACTERS : function(){
         return `${this.URL}/character`
     },
-    CHARACTERS_BY_ID : function(){
+    CHARACTER_BY_ID : function(id){
         return `${this.URL}/character/${id}`
     }
 }

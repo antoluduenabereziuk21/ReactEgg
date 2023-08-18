@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
-import Cards from './Cards';
+import {Cards} from './Cards';
+import RickAndMortyService from '../../services/RickAndMorty.service';
 
 
 
@@ -10,15 +11,25 @@ export class Main extends Component {
     constructor(props){
         
         super(props);
+        /**usaremos el Hook State, como lo llamaremos desde
+         * el constructor ,debenos asiganarle un valor inicial
+         * que en principio sera una array vacio
+        */
+        this.state = {mascotas:[]};
         
     };
-    /**
-     * componentDidMount sera quien luego de creado la
-     * clase, se encargara de actualizar la informacion
-     * que nos interece
-     */
+   
     componentDidMount(){
-        
+        /**
+         * desde didMount llamaremos a nuestro servicio,porque desde aqui?
+         * por el echo que didMount se ejecutara luego que el componente
+         * se haya cargado
+         */
+
+        RickAndMortyService.getAllCharacters()
+        /** mediante el setState incluiremos la data.result a nuestro state que lo iniciamos como un array vacio, para luego renderizarlo en nuestras cartas*/
+        .then((data) => {this.setState({mascotas: data.results});})
+        .catch((err) => {console.log(err)});
     }
   render() {
     
@@ -39,7 +50,7 @@ export class Main extends Component {
           </div>
         </section>
       
-        <Cards/>
+        <Cards mascotas={this.state.mascotas}/>
       
       </main>
       </div>
@@ -47,5 +58,5 @@ export class Main extends Component {
   }
 }
 
-export default Main
+//export default Main
 
