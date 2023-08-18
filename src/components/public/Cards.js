@@ -1,12 +1,31 @@
-import React from 'react'
-import  {Card} from './Card'
+import React, { useEffect, useState } from 'react'
+import RickAndMortyService  from '../../services/RickAndMorty.service'
+import  {Card} from './Card';
 
- export const Cards = ( { mascotas }) =>  {
+ export const Cards = ( ) =>  {
+ 
   /**
-   *Debemos pasarle ala Card una mascota(m) y una key que sera el id(lo cual es necesario porque cuando se itera un componente que son diferentes es necesario pasarle una key,de no hacerlo tendremos conflictos)
+   * Usaremos un hook de state,para llamar ala api desde
+   * cards en vez desde el main, con la implementacion 
+   * de useEffect, que se encargara de escuhar los cambios 
+   * activos
    */
+  const [mascotas, setMascotas] = useState([]);
 
-  const  cardsList = mascotas.map((m) => <Card mascota={m} key={m.id}/> );
+  const  cardsList = mascotas.map((m) => <Card mascota={m} key={m.id} /> );
+  
+  
+  useEffect(() => {
+
+    RickAndMortyService.getAllCharacters()
+    .then((data) => {setMascotas(data.results)})
+    .catch((err) => {console.log(err)});
+  
+   
+  }, [mascotas]);
+
+
+  
   return (
     <div className="album py-5 bg-body-tertiary">
           <div className="container">
