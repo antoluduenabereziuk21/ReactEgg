@@ -1,25 +1,23 @@
 import React from "react";
+/**
+ * 
+ * dentro de card atraperamos la mascota mediante destrugturing
+ * 
+ */
+export const Card = ({mascota}) => {
 
-export const Card = () => {
+
   return (
     <div className="col">
       <div className="card shadow-sm">
-        <svg
-          className="bd-placeholder-img card-img-top"
+        <img
+          
           width="100%"
-          height="225"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: Thumbnail"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#55595c" />
-          <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-            Thumbnail
-          </text>
-        </svg>
+          
+          src={mascota.image}
+          alt="image Rick&Morty"
+        />
+        <h3 className="mb-0 text-dark">{mascota.name}</h3>
         <div className="card-body">
           <p className="card-text">
             This is a wider card with supporting text below as a natural lead-in

@@ -1,23 +1,12 @@
 import React from 'react'
 import  {Card} from './Card'
-/**
- * 
- * utilizaremos destructuring para recibir lo que nos esta
- * llegando podriamos usar props tambien
- */
+
  export const Cards = ( { mascotas }) =>  {
   /**
-   * generaremos tantos componente  Card como necesitemos
-   * mediante la variable cardList ,totamos mascotas que
-   * es un Array , le aplicaremos el map para generar otro
-   * array , y dentro de map llamamos a una callback
-   * Function que toma los elementos bajo la variable m 
-   * y devolvera un CardComponent(generando 20 Cartas)
-   * Ahora usando el jsx cardList ,lo rederizaremos 
-   * mediante binding dentro del div 
+   *Debemos pasarle ala Card una mascota(m) y una key que sera el id(lo cual es necesario porque cuando se itera un componente que son diferentes es necesario pasarle una key,de no hacerlo tendremos conflictos)
    */
 
-  const  cardsList = mascotas.map((m) => <Card/> );
+  const  cardsList = mascotas.map((m) => <Card mascota={m} key={m.id}/> );
   return (
     <div className="album py-5 bg-body-tertiary">
           <div className="container">
