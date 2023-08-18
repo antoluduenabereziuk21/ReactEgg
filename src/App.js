@@ -1,15 +1,14 @@
-import "./App.css";
+import React from "react";
+/**implementacion de Rutas */
 
-/** 
- * Tanto Footer como NavBar son functional components
- * En Cambio main sera Class Component
- */
- //al importar un componente se declara entre llaves
+
+import "./App.css";
 import  { Footer }  from "./components/public/Footer";
 import Main from "./components/public/Main";
 import  { NavBar } from "./components/public/NavBar";
-//app se encargara de englobar componentes para enviar index.js
-// y luego a index.html
+
+
+
 function App() {
   return (
     <div>
