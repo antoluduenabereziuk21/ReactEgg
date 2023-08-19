@@ -2,9 +2,6 @@
 import React, { Component } from 'react'
 import {Cards} from './Cards';
 
-
-
-
 export class Main extends Component {
     
     constructor(props){
@@ -58,6 +55,5 @@ export class Main extends Component {
     )
   }
 }
-
-//export default Main
+export default Main
 

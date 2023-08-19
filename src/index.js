@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter} from 'react-router-dom';
 import App from './App';
 
-//guardamos el ReactDOM.create root
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-//luego mediante el metodo render renderizaremos nuesrto componente App.js, he inyecta el contenido al index.html sin necidad de recargar la pagina
+/** 
+ * aqui agregaremos el browser router para que nuestra app ademas de stricmode
+ * este sometida browserRouter
+*/
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

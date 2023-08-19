@@ -12,19 +12,21 @@ import  {Card} from './Card';
    */
   const [mascotas, setMascotas] = useState([]);
 
-  const  cardsList = mascotas.map((m) => <Card mascota={m} key={m.id} /> );
-  
+  let count = 0;
   
   useEffect(() => {
-
+    
     RickAndMortyService.getAllCharacters()
     .then((data) => {setMascotas(data.results)})
-    .catch((err) => {console.log(err)});
+    .catch((err) => {console.log(err.message)});
+    console.log("soy el useEffect")
+    
+    
+  },[]);
+  console.log("sigo refresacando"+ ( count ++));
   
-   
-  }, [mascotas]);
-
-
+  const  cardsList = mascotas.map((m) => <Card mascota={m} key={m.id} /> );
+  
   
   return (
     <div className="album py-5 bg-body-tertiary">
