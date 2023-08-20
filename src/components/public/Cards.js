@@ -29,10 +29,10 @@ import  {Card} from './Card';
   
   
   return (
-    <div classNameName="album py-5 bg-body-tertiary">
-          <div classNameName="container">
+    <div className="album py-5 bg-body-tertiary">
+          <div className="container">
       
-            <div classNameName="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {cardsList}
             </div>
           </div>

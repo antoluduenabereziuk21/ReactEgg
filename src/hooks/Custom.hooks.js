@@ -22,6 +22,12 @@ export const useUserForm = (initialState ={})=> {
     const  handleChanges= ({target})=> {
         //para luego destructur, sacar el name y el value
         const {name, value} = target;
+
+        /*console.log("target",target);
+        console.log("name",name);
+        console.log("value",value);*/
+        
+
         setForm({
             /*
             mediante (...form) spread, vamos a  ir 
