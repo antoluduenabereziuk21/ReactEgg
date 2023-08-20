@@ -1,6 +1,6 @@
 import {API_RM} from '../constants/Api.constants';
 
-class RickAndMortyService{
+className RickAndMortyService{
 
     async getAllCharacters(){
         //por defecto fetch el verbo es GET,por lo cual no

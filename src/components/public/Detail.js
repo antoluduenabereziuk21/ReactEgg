@@ -25,25 +25,25 @@ export const Detail = () => {
  }
 
   return (
-    <div className="card mb-3" style={{'background': 'gainsboro'}}>
-    <div className="row g-0 mt-4 mb-4" style={detailCard}>
-      <div className="col-md-3">
-        <img src={mascota.image} className="img-fluid rounded-start imgDetalle" alt="img del mascota"/>
+    <div classNameName="card mb-3" style={{'background': 'gainsboro'}}>
+    <div classNameName="row g-0 mt-4 mb-4" style={detailCard}>
+      <div classNameName="col-md-3">
+        <img src={mascota.image} classNameName="img-fluid rounded-start imgDetalle" alt="img del mascota"/>
       </div>
-      <div className="col-md-8 detallemascota">
-        <div className="card-body">
-          <h5 className="card-title">{mascota.name}</h5>
-          <p className="card-text"><small className=""> Specie: {mascota.species}</small></p>
-          <p className="card-text"><small className=""> Status: {mascota.status}</small></p>
-          <p className="card-text"><small className=""> Gender: {mascota.gender}</small></p>
-          <p className="card-text"><small className=""> Created: {mascota.created}</small></p>
+      <div classNameName="col-md-8 detallemascota">
+        <div classNameName="card-body">
+          <h5 classNameName="card-title">{mascota.name}</h5>
+          <p classNameName="card-text"><small classNameName=""> Specie: {mascota.species}</small></p>
+          <p classNameName="card-text"><small classNameName=""> Status: {mascota.status}</small></p>
+          <p classNameName="card-text"><small classNameName=""> Gender: {mascota.gender}</small></p>
+          <p classNameName="card-text"><small classNameName=""> Created: {mascota.created}</small></p>
         </div>
-        <div className="btn-group" style={{'marginLeft': '15px'}}>
+        <div classNameName="btn-group" style={{'marginLeft': '15px'}}>
               <button
                 type="button"
-                className="btn btn-sm btn-outline-secondary"
+                classNameName="btn btn-sm btn-outline-secondary"
               >
-                <Link to={'/'} className="nav-link px-2 text-success">Inicio</Link>
+                <Link to={'/'} classNameName="nav-link px-2 text-success">Inicio</Link>
               </button>
             </div>
       </div>
