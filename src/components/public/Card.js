@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 /**
  * 
  * dentro de card atraperamos la mascota mediante destrugturing
@@ -30,7 +31,9 @@ export const Card = ({mascota}) => {
                 type="button"
                 className="btn btn-sm btn-outline-secondary"
               >
-                View
+               <Link to={`/details/${mascota.id}` }className="nav-link">
+                Detalle
+               </Link>
               </button>
               <button
                 type="button"

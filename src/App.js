@@ -4,7 +4,7 @@ import {Routes , Route } from "react-router-dom";
 import  { Footer }  from "./components/public/Footer";
 import {Main} from "./components/public/Main";
 import  { NavBar } from "./components/public/NavBar";
-import {Detail} from "./components/public/Detail";
+import { Detail } from "./components/public/Detail";
 import {UserForm} from "./components/public/UserForm";
 /* reactRouterDom nos permite tener un manejo de componente
 y links lo cual nos permite renderizar lo que querramos.
@@ -17,8 +17,8 @@ function App() {
       
       <Routes>
         <Route exact path={"/"} element={<Main/>}/>
-        <Route  path={"/datails/:id"} element={Detail}/>
-        <Route  path={"/user-form"} element={UserForm}/>
+        <Route  path={"/details/:id"} element={<Detail/>}/>
+        <Route  path={"/user-form"} element={<UserForm/>}/>
       </Routes>
       
       
